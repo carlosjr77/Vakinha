@@ -58,10 +58,26 @@
             background: linear-gradient(90deg, #00c853, #69f0ae);
             height: 100%;
             border-radius: 20px 0 0 20px;
-            /* **ATUALIZADO:** 47.04% da meta de R$ 3.000,00 (R$ 1.411,12) */
-            width: 47.04%; 
+            /* **ATUALIZADO:** 50.37% da meta de R$ 3.000,00 (R$ 1.511,12) */
+            width: 50.37%; 
             transition: width 0.5s ease;
         }
+        
+        /* Destaque 50% */
+        .progress-bar::after {
+            content: '50% CONCLUÍDO!';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1a73e8; /* Cor que contrasta com a barra verde */
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 0 5px;
+            background: white;
+            border-radius: 3px;
+        }
+
 
         .stats {
             display: flex;
@@ -216,11 +232,11 @@
         </p>
 
         <div class="progress-container">
-            <div class="progress-bar" style="width: 47.04%;"></div>
+            <div class="progress-bar" style="width: 50.37%;"></div>
         </div>
         
         <div class="stats">
-            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.411,12</span></span>
+            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.511,12</span></span>
             <span>Meta: R$ 3.000,00</span>
         </div>
 
@@ -256,6 +272,13 @@
                         Roger Santos Miranda
                     </div>
                     <span class="donor-amount">R$ 200,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=27" class="donor-avatar" alt="Foto de Bruno MUNDI">
+                        Bruno MUNDI
+                    </div>
+                    <span class="donor-amount">R$ 100,00</span>
                 </li>
                 <li>
                     <div class="donor-info">
@@ -434,7 +457,7 @@
                 </li>
             </ul>
             <p style="text-align: right; font-size: 0.8em; margin-top: 10px; color: #666;">
-                Total de 27 doações adicionadas manualmente.
+                Total de 28 doações adicionadas manualmente.
             </p>
         </div>
     </div>
