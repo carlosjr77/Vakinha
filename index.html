@@ -1,3 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaquinha Solidária - Contribua!</title>
+    <style>
+        /* Estilos Gerais (CSS) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a73e8;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-weight: 500;
+            padding: 10px;
+            border: 1px dashed #c4e4c4;
+            background-color: #f0fff0;
+        }
+
+        /* Barra de Progresso */
+        .progress-container {
+            background-color: #e9ecef;
+            border-radius: 20px;
+            height: 25px;
+            width: 100%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #00c853, #69f0ae);
+            height: 100%;
+            border-radius: 20px 0 0 20px;
+            /* TOTAL: 18.63% da meta de R$ 3.000,00 */
+            width: 18.63%; 
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .highlight {
+            color: #00c853;
+        }
+
+        /* Área do Pix */
+        .pix-area {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+
+        .copy-box {
+            display: flex;
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mural de Doadores (Estilos para Imagem e Lista) */
+        .donors-list {
+            text-align: left;
+            margin-top: 2rem;
+            padding: 15px;
+            background-color: #f8f8ff;
+            border-radius: 8px;
+            border: 1px solid #e0e0f8;
+        }
+
+        .donors-list h4 {
+            color: #444;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-bottom: 5px;
+        }
+
+        .donors-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .donors-list ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #555;
+            border-bottom: 1px dotted #f0f0f0;
+        }
+        
+        .donor-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .donor-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            border: 2px solid #eee;
+        }
+        
+        .donor-amount {
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        /* Toast Message (mantido) */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            bottom: 30px;
+            font-size: 14px;
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Ajude nosso Projeto! 🙏</h1>
+        
+        <p class="description">
+            Sua doação faz a diferença! O valor pode ser de **10 centavos (R$ 0,10)**, até **R$ 5,00**, ou **o valor que Deus tocar no seu coração.**
+        </p>
+
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 18.63%;"></div>
+        </div>
+        
+        <div class="stats">
+            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 559,00</span></span>
+            <span>Meta: R$ 3.000,00</span>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 1.5rem;">
+
+        <h3>Escaneie ou Copie para Doar</h3>
+        
+        <div class="pix-area">
+            <img src="QRCODE_PIX.JPG" alt="QR Code Pix" class="qr-code">
+            
+            <p style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">
+                Pix Copia e Cola (Chave Aleatória de Carlos Henrique):
+            </p>
+            <div class="copy-box">
+                <input type="text" value="00020126580014BR.GOV.BCB.PIX01368b362a40-2c30-4453-921c-d318db2011685204000053039865802BR5924Carlos Henrique da Costa6009SAO PAULO62140510Wa93X7XvTu6304CFBA" id="pixKey" readonly>
+                <button onclick="copiarPix()">Copiar</button>
+            </div>
+        </div>
+
+        <div class="donors-list">
+            <h4>🙏 Últimos Doadores Confirmados</h4>
+            <ul>
                 <li>
                     <div class="donor-info">
                         <img src="roger_santos_miranda.jpg" class="donor-avatar" alt="Foto de Roger Santos Miranda">
@@ -5,3 +250,61 @@
                     </div>
                     <span class="donor-amount">R$ 200,00</span>
                 </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=1" class="donor-avatar" alt="Foto de João S.">
+                        João Silva
+                    </div>
+                    <span class="donor-amount">R$ 5,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=2" class="donor-avatar" alt="Foto de Ana O.">
+                        Ana Oliveira
+                    </div>
+                    <span class="donor-amount">R$ 2,50</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=3" class="donor-avatar" alt="Foto de Pedro S.">
+                        Pedro Santos
+                    </div>
+                    <span class="donor-amount">R$ 3,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=4" class="donor-avatar" alt="Foto de Camila S.">
+                        Camila Souza
+                    </div>
+                    <span class="donor-amount">R$ 4,50</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=5" class="donor-avatar" alt="Foto de Lucas P.">
+                        Lucas Pereira
+                    </div>
+                    <span class="donor-amount">R$ 2,00</span>
+                </li>
+            </ul>
+            <p style="text-align: right; font-size: 0.8em; margin-top: 10px; color: #666;">
+                Total de 6 doações adicionadas manualmente.
+            </p>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Chave Pix copiada com sucesso!</div>
+
+    <script>
+        function copiarPix() {
+            var copyText = document.getElementById("pixKey");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                var toast = document.getElementById("toast");
+                toast.className = "toast show";
+                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
