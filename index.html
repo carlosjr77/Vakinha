@@ -1,9 +1,35 @@
+        <div class="donors-list">
+            <h4>🙏 Últimos Doadores Confirmados</h4>
+            <ul>
+                <li>
+                    <div class="donor-info">
+                        <img src="yuri_lindesay.png" class="donor-avatar" alt="Foto de Yuri Lindesay">
+                        Yuri Lindesay
+                    </div>
+                    <span class="donor-amount">R$ 100,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=7" class="donor-avatar" alt="Foto de Higor Gonzaga">
+                        Higor Gonzaga
+                    </div>
+                    <span class="donor-amount">R$ 10,00</span>
+                </li>
+                ```
+
+O caminho `src="yuri_lindesay.png"` indica que o navegador deve procurar o arquivo de imagem `yuri_lindesay.png` na mesma pasta em que o arquivo HTML está.
+
+### Código HTML Completo e Atualizado
+
+Aqui está o seu código completo com a correção do caminho da foto do Yuri Lindesay e todos os cálculos mantidos:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><b>Vaquinha Solidária - Contribua!</b></title>
+    <title>Vaquinha Solidária - Contribua!</title>
     <style>
         /* Estilos Gerais (CSS) */
         body {
@@ -58,8 +84,8 @@
             background: linear-gradient(90deg, #00c853, #69f0ae);
             height: 100%;
             border-radius: 20px 0 0 20px;
-            /* **ATUALIZADO:** 19.07% da meta de R$ 3.000,00 (R$ 572,00) */
-            width: 19.07%; 
+            /* TOTAL: 22.40% da meta de R$ 3.000,00 (R$ 672,00) */
+            width: 22.40%; 
             transition: width 0.5s ease;
         }
 
@@ -212,15 +238,15 @@
         <h1>Ajude nosso Projeto! 🙏</h1>
         
         <p class="description">
-            Sua doação faz a diferença! O valor pode ser de <b>10 centavos (R$ 0,10)</b>, até R$ 5,00, ou o valor que Deus tocar no seu coração.
+            Sua doação faz a diferença! O valor pode ser de **10 centavos (R$ 0,10)**, até **R$ 5,00**, ou **o valor que Deus tocar no seu coração.**
         </p>
 
         <div class="progress-container">
-            <div class="progress-bar" style="width: 19.07%;"></div>
+            <div class="progress-bar" style="width: 22.40%;"></div>
         </div>
         
         <div class="stats">
-            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 572,00</span></span>
+            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 672,00</span></span>
             <span>Meta: R$ 3.000,00</span>
         </div>
 
@@ -243,6 +269,13 @@
         <div class="donors-list">
             <h4>🙏 Últimos Doadores Confirmados</h4>
             <ul>
+                <li>
+                    <div class="donor-info">
+                        <img src="yuri_lindesay.jpeg" class="donor-avatar" alt="Foto de Yuri Lindesay">
+                        Yuri Lindesay
+                    </div>
+                    <span class="donor-amount">R$ 100,00</span>
+                </li>
                 <li>
                     <div class="donor-info">
                         <img src="https://picsum.photos/30/30?random=7" class="donor-avatar" alt="Foto de Higor Gonzaga">
@@ -301,7 +334,7 @@
                 </li>
             </ul>
             <p style="text-align: right; font-size: 0.8em; margin-top: 10px; color: #666;">
-                Total de 8 doações adicionadas manualmente.
+                Total de 9 doações adicionadas manualmente.
             </p>
         </div>
     </div>
