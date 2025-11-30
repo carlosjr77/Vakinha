@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaquinha Solidária - Contribua!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Estilos Gerais (CSS) */
         body {
@@ -58,8 +59,8 @@
             background: linear-gradient(90deg, #00c853, #69f0ae);
             height: 100%;
             border-radius: 20px 0 0 20px;
-            /* **ATUALIZADO:** 42.95% da meta de R$ 3.000,00 (R$ 1.288,62) */
-            width: 42.95%; 
+            /* **ATUALIZADO:** 44.42% da meta de R$ 3.000,00 (R$ 1.332,62) */
+            width: 44.42%; 
             transition: width 0.5s ease;
         }
         
@@ -204,6 +205,35 @@
             from {bottom: 30px; opacity: 1;}
             to {bottom: 0; opacity: 0;}
         }
+
+        /* **NOVO ESTILO:** Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: scale(1.05);
+        }
+
+        .whatsapp-float i {
+            margin-top: 4px; /* Ajuste fino para centralizar o ícone */
+        }
     </style>
 </head>
 <body>
@@ -212,15 +242,15 @@
         <h1>Ajude nosso Projeto! 🙏</h1>
         
         <p class="description">
-            Sua doação faz a diferença! O valor pode ser de **10 centavos (R$ 0,10)**, até **R$ 5,00**, ou **o valor que Deus tocar no seu coração.**
+            <strong>Sua doação faz a diferença! O valor pode ser de 10 centavos (R$ 0,10), até R$ 5,00, ou o valor que Deus tocar no seu coração.</strong>
         </p>
 
         <div class="progress-container">
-            <div class="progress-bar" style="width: 42.95%;"></div>
+            <div class="progress-bar" style="width: 44.42%;"></div>
         </div>
         
         <div class="stats">
-            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.288,62</span></span>
+            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.332,62</span></span>
             <span>Meta: R$ 3.000,00</span>
         </div>
 
@@ -253,7 +283,7 @@
                 <li>
                     <div class="donor-info">
                         <img src="roger_santos_miranda.png" class="donor-avatar" alt="Foto de Roger Santos Miranda">
-                        Mc Roger
+                        Roger Santos Miranda
                     </div>
                     <span class="donor-amount">R$ 200,00</span>
                 </li>
@@ -329,6 +359,13 @@
                 </li>
                 <li>
                     <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=29" class="donor-avatar" alt="Foto de Arthur fotógrafo">
+                        Arthur fotógrafo
+                    </div>
+                    <span class="donor-amount">R$ 30,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
                         <img src="https://picsum.photos/30/30?random=14" class="donor-avatar" alt="Foto de Aline Freitas">
                         Aline Freitas
                     </div>
@@ -347,6 +384,13 @@
                         Nathalia Aranha
                     </div>
                     <span class="donor-amount">R$ 15,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=30" class="donor-avatar" alt="Foto de Milena Ferreira Duarte">
+                        Milena Ferreira Duarte
+                    </div>
+                    <span class="donor-amount">R$ 14,00</span>
                 </li>
                 <li>
                     <div class="donor-info">
@@ -448,10 +492,14 @@
                 </li>
             </ul>
             <p style="text-align: right; font-size: 0.8em; margin-top: 10px; color: #666;">
-                Total de 29 doações adicionadas manualmente.
+                Total de 31 doações adicionadas manualmente.
             </p>
         </div>
     </div>
+
+    <a href="https://wa.me/5521979934676" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <div id="toast" class="toast">Chave Pix copiada com sucesso!</div>
 
