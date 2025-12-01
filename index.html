@@ -31,12 +31,22 @@
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
+        
+        /* NOVO ESTILO: Informação de atualização */
+        .update-info {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+            /* Garante que o texto se destaque sutilmente */
+            font-style: italic; 
+        }
 
         .description {
             color: #333;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            /* Garante que todo o texto da descrição fique forte/negrito */
             font-weight: bold; 
             line-height: 1.5;
             padding: 10px;
@@ -59,8 +69,7 @@
             background: linear-gradient(90deg, #00c853, #69f0ae);
             height: 100%;
             border-radius: 20px 0 0 20px;
-            /* **ATUALIZADO:** 46.15% da meta de R$ 3.000,00 (R$ 1.384,62) */
-            width: 46.15%; 
+            width: 48.65%; 
             transition: width 0.5s ease;
         }
         
@@ -212,16 +221,20 @@
     <div class="card">
         <h1>Ajude nosso Projeto! 🙏</h1>
         
+        <p class="update-info">
+            Última atualização: 01 de Dezembro de 2025 às 16:23 (BRT)
+        </p>
+        
         <p class="description">
             Sua doação faz a diferença! O valor pode ser de 10 centavos (R$ 0,10), até R$ 5,00, ou o valor que Deus tocar no seu coração.
         </p>
 
         <div class="progress-container">
-            <div class="progress-bar" style="width: 46.15%;"></div>
+            <div class="progress-bar" style="width: 48.65%;"></div>
         </div>
         
         <div class="stats">
-            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.384,62</span></span>
+            <span>Arrecadado: <span class="highlight" id="valor-arrecadado">R$ 1.459,62</span></span>
             <span>Meta: R$ 3.000,00</span>
         </div>
 
@@ -292,6 +305,13 @@
                         Douglas Ferreira Vidinha
                     </div>
                     <span class="donor-amount">R$ 50,20</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=36" class="donor-avatar" alt="Foto de Israel prod SBT Bahia">
+                        Israel prod SBT Bahia
+                    </div>
+                    <span class="donor-amount">R$ 50,00</span>
                 </li>
                 <li>
                     <div class="donor-info">
@@ -379,6 +399,20 @@
                 </li>
                 <li>
                     <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=33" class="donor-avatar" alt="Foto de Joe Conction SP">
+                        Joe Conction SP
+                    </div>
+                    <span class="donor-amount">R$ 10,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=34" class="donor-avatar" alt="Foto de Wallace">
+                        Wallace
+                    </div>
+                    <span class="donor-amount">R$ 10,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
                         <img src="https://picsum.photos/30/30?random=21" class="donor-avatar" alt="Foto de Yasmin Emes">
                         Yasmin Emes
                     </div>
@@ -404,6 +438,13 @@
                         Manuela dos Reis
                     </div>
                     <span class="donor-amount">R$ 6,00</span>
+                </li>
+                <li>
+                    <div class="donor-info">
+                        <img src="https://picsum.photos/30/30?random=35" class="donor-avatar" alt="Foto de Letícia Neri">
+                        Letícia Neri
+                    </div>
+                    <span class="donor-amount">R$ 5,00</span>
                 </li>
                 <li>
                     <div class="donor-info">
@@ -477,7 +518,7 @@
                 </li>
             </ul>
             <p style="text-align: right; font-size: 0.8em; margin-top: 10px; color: #666;">
-                Total de 33 doações adicionadas manualmente.
+                Total de 37 doações adicionadas manualmente.
             </p>
         </div>
     </div>
